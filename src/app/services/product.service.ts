@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ProductInterface } from '../interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,9 @@ export class ProductService {
     return this.HttpClient.get(this.API_URL).pipe(res => res);
   }
 
-
+  CrearProducto(formData:any):Observable<any>{
+    return this.HttpClient.post<ProductInterface>(this.API_URL,formData);
+  }
   
 
 

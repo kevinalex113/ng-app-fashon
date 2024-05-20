@@ -1,4 +1,5 @@
 export interface ProductInterface{
+        nid_clothes: string;
         cmaterial: string;
         cdescription: string;
         cimage: string;

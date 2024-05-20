@@ -3,6 +3,7 @@
     <table class ="table table-hover">
         <thead class ="table-danger">
             <tr>
+                <th scope="col">#</th>
                 <th scope="col">description</th>
                 <th scoper="col">color</th>
                 <th scoper="col">material</th>
@@ -18,7 +19,8 @@
         <tbody>
             @for (item of productList; track $index) {
             <tr>
-                <th class ="row">{{item.cdescription}}</th>
+                <th class ="row">{{item.nid_clothes}}</th>
+                <td>{{item.cdescription}}</td>
                 <td>{{item.ccolor}}</td>
                 <td>{{item.cmaterial}}</td>
                 <td>{{item.ctype_clothes}}</td>
