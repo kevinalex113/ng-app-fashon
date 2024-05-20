@@ -1,0 +1,34 @@
+<div>
+    <h1 class="text-center">Los productos</h1>
+    <table class ="table table-hover">
+        <thead class ="table-danger">
+            <tr>
+                <th scope="col">description</th>
+                <th scoper="col">color</th>
+                <th scoper="col">material</th>
+                <th scoper="col">tipe crlothes</th>
+                <th scoper="col">size</th>
+                <th scoper="col">price</th>
+                <th scoper="col">stock</th>
+                <th scoper="col">path</th>
+                
+            </tr>
+
+        </thead>
+        <tbody>
+            @for (item of productList; track $index) {
+            <tr>
+                <th class ="row">{{item.cdescription}}</th>
+                <td>{{item.ccolor}}</td>
+                <td>{{item.cmaterial}}</td>
+                <td>{{item.ctype_clothes}}</td>
+                <td>{{item.csize}}</td>
+                <td>{{item.fprice}}</td>
+                <td>{{item.nstock}}</td>
+                <td>{{item.cimage}}</td>
+                
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
