@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ProductInterface } from '../../interfaces/product.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
-export class ProductComponent implements OnInit {
+export default class ProductComponent implements OnInit {
 
   productList: ProductInterface[]=[];
 

@@ -8,4 +8,5 @@ export interface ProductInterface{
         ctype_clothes: string;
         csize: string;
         fprice: number;
+        
 }

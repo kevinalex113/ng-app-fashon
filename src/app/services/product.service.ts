@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductInterface } from '../interfaces/product.interface';
 
@@ -7,19 +7,10 @@ import { ProductInterface } from '../interfaces/product.interface';
   providedIn: 'root'
 })
 export class ProductService {
+  
 
   API_URL: string = "http://localhost:8080/Clothes";
-   body = {
-    "cimage":"PATH:",
-    "cdescription":"Playera Polo Dry Fit",
-    "cmaterial":"100% Algodón",
-    "ccolor":"Naranja",
-    "ctype_clothes":"Playera",
-    "csize":"Mediana",
-    "fprice":125.00,
-    "nstock":15,
-    "acategories":["moda2", "fashion2", "playera fit2", "Dark2"]
-};
+  
 
   constructor(private HttpClient: HttpClient) { }
 
@@ -28,7 +19,17 @@ export class ProductService {
   }
 
   CrearProducto(formData:any):Observable<any>{
-    return this.HttpClient.post<ProductInterface>(this.API_URL,formData);
+
+    console.log(formData)
+    return this.HttpClient.post<ProductInterface>(this.API_URL, formData);
+  }
+
+  update(id: number, formData: any){
+    this.HttpClient.put<ProductInterface>(`http://localhost:8080/Clothes/${id}`,formData);
+  }
+
+  delete(id: number){
+    return this.HttpClient.delete<ProductInterface>(`http://localhost:8080/Clothes/${id}`);
   }
   
 
