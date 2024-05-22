@@ -30,10 +30,17 @@ export default class ProductComponent implements OnInit {
         console.log(err);
       }
     })
+  }
 
-    
 
-  
+  deletproduct(product: ProductInterface){
+    /*this.productService.delete(product.nid_clothes).subscribe(()=>{
+    this.productService.getProducts().subscribe({
+      next: (result) =>{
+        this.productList = result.products;
+      }
+    })
+    })*/
   }
 
 }

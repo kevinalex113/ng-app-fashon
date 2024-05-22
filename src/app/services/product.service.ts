@@ -28,7 +28,7 @@ export class ProductService {
     this.HttpClient.put<ProductInterface>(`http://localhost:8080/Clothes/${id}`,formData);
   }
 
-  delete(id: number){
+  delete(id: string){
     return this.HttpClient.delete<ProductInterface>(`http://localhost:8080/Clothes/${id}`);
   }
   
